@@ -1,3 +1,2 @@
-Krzysztof 20
-Janusz 40
-Rafał 22
+Rafał Socha 22
+Damian Stasianek 22

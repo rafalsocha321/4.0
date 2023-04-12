@@ -15,7 +15,7 @@ class Main {
 
     Scanner scan = new Scanner(System.in);
     int wybor;
-    System.out.println("Co zrobić? 0-zakończ program, 1-dodaj nowego studenta");
+    System.out.println("Co zrobić? 0-zakończ program, 1-dodaj nowego studenta, 2-wypisz studentów");
     wybor = scan.nextInt();
     switch(wybor)
       {
@@ -24,22 +24,32 @@ class Main {
 
         case 1:
             String imie;
+          String nazwisko;
           int wiek;
           System.out.println("Podaj imię: ");
           imie = scan.next();
+          System.out.println("Podaj nazwisko: ");
+          nazwisko = scan.next();
           System.out.println("Podaj wiek: ");
           wiek = scan.nextInt();
             try {
                 Service s = new Service();
-                s.addStudent(new Student(imie, wiek));
-            var students = s.getStudents();
-      for(Student current : students) {
-        System.out.println(current.ToString());
-      }    
+                s.addStudent(new Student(imie, nazwisko, wiek));
+                
             }
               catch (IOException e){};
           
            break;
+          
+           case 2:
+          try{
+          Service s = new Service();  
+          var students = s.getStudents();
+      for(Student current : students) {
+        System.out.println(current.ToString());}
+      }
+          catch (IOException e){};
+          break;
       }
          
   }
