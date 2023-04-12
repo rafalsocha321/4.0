@@ -32,8 +32,13 @@ class Main {
             try {
                 Service s = new Service();
                 s.addStudent(new Student(imie, wiek));
-                }
+            var students = s.getStudents();
+      for(Student current : students) {
+        System.out.println(current.ToString());
+      }    
+            }
               catch (IOException e){};
+          
            break;
       }
          
