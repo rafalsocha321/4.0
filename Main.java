@@ -45,7 +45,7 @@ class Main {
               }
           String kropka = "."; 
           char krop = kropka.charAt(0);
-          if(data.length()==10 && adata[2]==krop && adata[5]==krop && adata[3]){
+          if(data.length()==10 && adata[2]==krop && adata[5]==krop && adata[3]<2){
             try {
                 Service s = new Service();
                 s.addStudent(new Student(imie, nazwisko, wiek, adres, data));
