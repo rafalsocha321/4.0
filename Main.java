@@ -27,6 +27,7 @@ class Main {
           String nazwisko;
           int wiek;
           String adres;
+          String data;
           System.out.println("Podaj imię: ");
           imie = scan.next();
           System.out.println("Podaj nazwisko: ");
@@ -35,12 +36,28 @@ class Main {
           wiek = scan.nextInt();
           System.out.println("Podaj adres (ulicę): ");
           adres = scan.next();
+          System.out.println("Podaj datę urodzenia (użyj formatu dd.mm.rrrr): ");
+          data = scan.next();
+           char[] adata = new char[data.length()];
+            for(int i=0; i<data.length(); i++ )
+              {
+                adata[i] = data.charAt(i);
+              }
+          String kropka = "."; 
+          char krop = kropka.charAt(0);
+          if(data.length()==10 && adata[2]==krop && adata[5]==krop && adata[3]){
             try {
                 Service s = new Service();
-                s.addStudent(new Student(imie, nazwisko, wiek, adres));
+                s.addStudent(new Student(imie, nazwisko, wiek, adres, data));
                 
             }
               catch (IOException e){};
+            
+          }
+            else
+          {
+            System.out.println("Podano niewłaściwą datę!");
+          }
           
            break;
           
