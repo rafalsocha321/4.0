@@ -26,15 +26,18 @@ class Main {
             String imie;
           String nazwisko;
           int wiek;
+          String adres;
           System.out.println("Podaj imię: ");
           imie = scan.next();
           System.out.println("Podaj nazwisko: ");
           nazwisko = scan.next();
           System.out.println("Podaj wiek: ");
           wiek = scan.nextInt();
+          System.out.println("Podaj adres (ulicę): ");
+          adres = scan.next();
             try {
                 Service s = new Service();
-                s.addStudent(new Student(imie, nazwisko, wiek));
+                s.addStudent(new Student(imie, nazwisko, wiek, adres));
                 
             }
               catch (IOException e){};
