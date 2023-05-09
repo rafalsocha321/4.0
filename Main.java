@@ -78,8 +78,10 @@ class Main {
 
           try {
                 Service f = new Service();
-                f.findStudentByName(imie2);
-                
+               var student = f.findStudentByName(imie2);
+
+            for(Student current : student) {
+        System.out.println(current.ToString());}
             }
               catch (IOException e){};
           break;
