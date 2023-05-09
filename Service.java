@@ -30,7 +30,18 @@ public class Service {
     return ret;
   }
 
-  public Student findStudentByName(String name) {
-    return null;
+  public Student findStudentByName(String name) throws IOException {
+    var f = new FileReader("db.txt");
+    var reader = new BufferedReader(f);
+    String line = "";
+    while (true) {
+      line = reader.readLine();
+      Student line2 = new Student(Parse(line));
+      if(line == null)
+        break;
+      ret.add(Student.Parse(line));
+    }
+    reader.close();
+    return ret;
   }
 }
